@@ -158,10 +158,10 @@ class BezierChartState extends State<BezierChart>
   bool _displayIndicator = false;
 
   ///padding for leading and trailing of the chart
-  final double horizontalPadding = 5.0;
+  final double horizontalPadding = 10.0;
 
   ///spacing between each datapoint
-  double horizontalSpacing = 5.0;
+  double horizontalSpacing = 10.0;
 
   ///List of `DataPoint`s used to display all the values for the `X` axis
   List<DataPoint> _xAxisDataPoints = [];
