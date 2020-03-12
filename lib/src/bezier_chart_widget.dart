@@ -282,9 +282,7 @@ class BezierChartState extends State<BezierChart>
     _tempYValues = [];
     final scale = _currentBezierChartScale;
     if (scale == BezierChartScale.CUSTOM) {
-      _xAxisDataPoints = widget.xAxisCustomValues
-          .map((val) => DataPoint<double>(value: val, xAxis: val))
-          .toList();
+      _xAxisDataPoints = widget.xAxisCustomValues.map((val) => DataPoint<double>(value: val, xAxis: val)).toList();
     } else if (scale == BezierChartScale.HOURLY) {
       final hours = widget.toDate.difference(widget.fromDate).inHours;
       for (int i = 0; i < hours; i++) {
@@ -1119,7 +1117,7 @@ class _BezierChartPainter extends CustomPainter {
       _AxisValue lastPoint;
 
       //display each data point
-      for (int i = 0; i < xAxisDataPoints.length; i++) {
+      for (int i = 0; i < xAxisDataPoints.length; i+4) {
         double value = 0.0;
 
         double axisX = xAxisDataPoints[i].value;
