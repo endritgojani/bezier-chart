@@ -1117,7 +1117,7 @@ class _BezierChartPainter extends CustomPainter {
       _AxisValue lastPoint;
 
       //display each data point
-      for (int i = 0; i < xAxisDataPoints.length; i+4) {
+      for (int i = 0; i < xAxisDataPoints.length; i++) {
         double value = 0.0;
 
         double axisX = xAxisDataPoints[i].value;
@@ -1254,7 +1254,7 @@ class _BezierChartPainter extends CustomPainter {
 
         //draw footer
         textPainterXAxis.text = TextSpan(
-          text: _getFooterText(xAxisDataPoints[i]),
+          text: i%4 == 0 ? _getFooterText(xAxisDataPoints[i]) : '',
           style: xAxisTextStyle,
         );
         textPainterXAxis.layout();
