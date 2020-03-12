@@ -111,12 +111,6 @@ class BezierChart extends StatefulWidget {
           "The xAxisCustomValues must be sorted in increasing way",
         ),
         assert(
-          bezierChartScale == BezierChartScale.CUSTOM &&
-                  _compareLengths(xAxisCustomValues.length, series) ||
-              bezierChartScale != BezierChartScale.CUSTOM,
-          "xAxisCustomValues lenght must be equals to series length",
-        ),
-        assert(
           (bezierChartScale == BezierChartScale.CUSTOM &&
                   _areAllPositive(xAxisCustomValues) &&
                   _checkCustomValues(series)) ||
